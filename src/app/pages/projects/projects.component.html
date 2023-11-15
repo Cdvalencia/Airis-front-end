@@ -1,0 +1,41 @@
+<header>
+  <h2>Proyectos</h2>
+  <div>
+    <figure>
+      <span class="icon-[iconamoon--home-thin]"></span>          
+    </figure>
+    <h4>Mapa</h4>
+  </div>
+</header>
+<section class="projects"> 
+  <div>      
+    <form [formGroup]="markerForm" id="markerForm">
+      <h3>Crear Marcador</h3>
+      <article>
+        <mat-form-field>
+          <div>
+            <label for="">Latitud</label>
+            <input type="text"  formControlName="latitud" autocomplete="off" matInput placeholder="Ingrese su latitud" numbersOnly>
+            <mat-error *ngIf="markerForm?.get('latitud')?.hasError('required') && markerForm?.get('latitud')?.dirty">
+              latitud requerido
+            </mat-error>
+          </div>
+        </mat-form-field>
+        <mat-form-field>
+          <div>
+            <label for="">Longitud</label>
+            <input type="text"  formControlName="longitud" autocomplete="off" matInput placeholder="Ingrese su longitud" numbersOnly>
+            <mat-error *ngIf="markerForm?.get('longitud')?.hasError('required') && markerForm?.get('longitud')?.dirty">
+              Longitud requerido
+            </mat-error>
+          </div>
+        </mat-form-field>
+      </article>
+      <footer>
+        <div class="btn" (click)="addMarker()">Agregar Marcador</div>
+      </footer>
+    </form>
+  </div>
+  <app-map [markers]="markers">    
+  </app-map>  
+</section>

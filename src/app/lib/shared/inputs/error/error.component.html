@@ -1,0 +1,23 @@
+<mat-error *ngIf="ngControl.hasError('required') && ngControl.touched">
+  Campo requerido
+</mat-error>
+<mat-error *ngIf="ngControl.hasError('email')">
+  Correo no válido.
+</mat-error>
+<mat-error *ngIf="ngControl.errors?.['maxlength']">
+  El máximo de caracteres es de
+  {{ ngControl.errors.maxlength.requiredLength }}.
+</mat-error>
+<mat-error *ngIf="ngControl.errors?.['minlength']">
+  El mínimo de caracteres es de
+  {{ ngControl.errors.minlength.requiredLength }}.
+</mat-error>
+<mat-error *ngIf="ngControl.errors?.['max']">
+  El máximo número es {{ ngControl.errors.max.max }}.
+</mat-error>
+<mat-error *ngIf="ngControl.errors?.['min']">
+  El mínimo número es {{ ngControl.errors.min.min }}.
+</mat-error>
+<mat-error *ngIf="ngControl.errors?.['pattern']">
+  El campo no es correcto
+</mat-error>

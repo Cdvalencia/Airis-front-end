@@ -1,0 +1,25 @@
+<button
+  [matMenuTriggerFor]="columnFilterMenu"
+  class="flex-none ml-4"
+  mat-icon-button
+  matTooltip="Filtros de columnas"
+  type="button"
+>
+  <span class="icon-[bi--filter]"></span>
+</button>
+
+<mat-menu #columnFilterMenu="matMenu" xPosition="before" yPosition="below">
+  <button
+    (click)="toggleColumnVisibility(column, $event)"
+    *ngFor="let column of columns"
+    class="block mat-menu-item"    
+  >
+    <mat-checkbox
+      (click)="$event.stopPropagation()"
+      [(ngModel)]="column.visible"
+      color="primary"
+    >
+      {{ column.label }}
+    </mat-checkbox>
+  </button>
+</mat-menu>

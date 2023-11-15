@@ -1,0 +1,7 @@
+<app-navbar (changeMenu)="changeMenu()"  (changeProfile)="changeProfile()"  [className]="menuActive ? '' : 'closed'" [profileOpen]="profileOpen"></app-navbar>
+
+<main [className]="menuActive ? '' : 'closed'">
+    <app-navbar-content (changeMenu)="changeMenu()" ></app-navbar-content>        
+    <ng-content>
+    </ng-content>
+</main>

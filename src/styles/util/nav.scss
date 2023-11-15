@@ -1,0 +1,251 @@
+app-navbar{
+  position: relative;
+  z-index: 2; 
+  header{
+    width: 100%;
+    height: 60px;
+    padding: 0 1vw;
+    @include flex;    
+    background-color: white;
+    -webkit-box-shadow: 1px 1px 4px 3px rgba(0,0,0,0.08);
+    -moz-box-shadow: 1px 1px 4px 3px rgba(0,0,0,0.08);
+    box-shadow: 1px 1px 4px 3px rgba(0,0,0,0.08);
+    &>div{
+      width: 100%;
+      @include flex;
+      &>section{
+        width: calc($width-menu-lateral - 1vw);
+        height: 100%;
+        position: relative;
+        transition: 0.5s ease all;        
+        app-logo{
+          height: 100%;
+          width: 100%;
+          a{
+            width: 100%;
+            height: 100%;
+            @include flex
+          }
+          img{
+            max-height: 55px;
+            max-width: 90%; 
+            transition: 0.6s ease all;            
+            opacity: 1;
+            &:last-child{
+              opacity: 0;
+              width: 0;
+              transition: 0.2s ease all;                          
+            }
+          }
+        }
+        &>figure{
+          position: absolute;
+          height: 100%;
+          width: 40px;
+          @include flex;
+          right: -50px;
+          top: 0;
+          bottom: 0;
+          margin: auto;
+          cursor: pointer;
+          span{
+            font-size: 3em;
+            transform: rotateY(0);
+            transition: 0.5s ease all;
+          }
+          &.menu-open2{
+            display: none;
+          }
+        }
+      }
+      &>nav{
+        width: 100%;
+        @include flex;
+        justify-content: flex-start;
+        flex-direction: row-reverse;
+        &>article{
+          width: 40px;
+          height: 40px;
+          margin-left: 10px;
+          position: relative;
+          &>figure{
+            width: 40px;
+            height: 40px;
+            @include flex;
+            cursor: pointer;
+            &>span{
+              font-size: 2.2em;
+            }
+          }
+        }
+      }
+    }
+  }
+  &.closed{
+    header{
+      &>div{
+        &>section{
+          width: 50px;
+          transition: 0.5s ease all;
+          transition-delay: .3s;
+          &>figure{
+            span{
+              transition: 0.5s ease all;
+              transform: rotateY(180deg);
+            }
+          }
+          app-logo{                        
+            img{                             
+              &:first-child{
+                opacity: 0;
+                width: 0;
+                transition: 5s ease all;           
+              }
+              &:last-child{
+                width: 40px;
+                max-height: 40px;                             
+                opacity: 1;    
+                transition: .5s ease all;           
+                transition-delay: .4s;                          
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .nav-ico-bell{
+    position: absolute;
+    font-size: .7em;
+    aspect-ratio: 1 / 1;
+    padding: 2px;
+    background-color: green;
+    color: white;
+    @include flex;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    right: 4px;
+    top: 8px;
+    font-weight: 600;
+  }
+}
+  
+.nav-profile{
+  position: relative;
+  &>figure{
+    @include flex;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    cursor: pointer;
+  }
+  &>section{
+    position: absolute;
+    width: 300px;
+    padding: 10px;    
+    right: 4px;
+    top: 44px;
+    background-color: white;
+    -webkit-box-shadow: 1px 1px 4px 3px rgba(0,0,0,0.08);
+    -moz-box-shadow: 1px 1px 4px 3px rgba(0,0,0,0.08);
+    box-shadow: 1px 1px 4px 3px rgba(0,0,0,0.08);
+    border-radius: 5px 0 5px 5px;
+    ul{
+      li{
+        padding: 8px 15px;
+        cursor: pointer;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        border-bottom: 1px solid #ccc;
+        figure{
+          width: 40px;
+        }
+        span{
+          font-size: 2.5em;
+        }        
+        p{
+          font-size: 1.2em;
+          font-weight: 400;                
+        }
+        h3{
+          font-size: 1.5em;
+          font-weight: bold; 
+          width: 100%;
+          margin: 0;
+          font-family: "Poppins", sans-serif;
+        }
+        h4{
+          font-size: 1.1em;
+          font-weight: 300;          
+          width: 100%;
+          margin: 0;
+          font-family: "Poppins", sans-serif;
+        }
+        &:first-child{
+          flex-wrap: wrap;
+        }
+        &:last-child{
+          border-bottom: none;
+        }
+        &>ol{
+          width: 100%;
+          &>li{
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1600px){}
+@media screen and (max-width: 1400px){}
+@media screen and (max-width: 1300px){}
+@media screen and (max-width: 1200px){}
+@media screen and (max-width: 1024px){}
+@media screen and (max-width: 900px){}
+@media screen and (max-width: 760px){
+  app-navbar header > div > section > figure.menu-open{
+    display: none;    
+  }  
+  app-navbar header > div > section > figure.menu-open2{
+    display: flex;    
+  }  
+  app-navbar.closed header > div > section{
+    width: calc(350px - 1vw);
+    transition: 0.5s ease all;
+    width: 100%;
+  }
+  app-navbar header > div > section{
+    width: 100%;    
+  }
+  app-navbar.closed header > div > section app-logo img{
+    &:first-child{
+      width: initial;      
+      opacity: 1;
+    }
+    &:last-child{
+      width: 0;
+      opacity: 0;      
+    }
+  }
+}
+@media screen and (max-width: 600px){
+  app-navbar header > div{
+    flex-wrap: wrap;
+  }
+  app-navbar header{
+    height: 120px;
+  }
+  app-navbar header > div > section > figure{
+    right: initial;
+    top: 80px;
+    left: 10px;
+  }
+  
+}
+@media screen and (max-width: 400px){}
+@media screen and (max-width: 320px){}
+

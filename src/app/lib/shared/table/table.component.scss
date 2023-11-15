@@ -1,0 +1,16 @@
+.mat-select {
+  min-width: 56px;
+  pointer-events: auto;
+  font-size: 12px;
+  bottom: 20.6875px;
+  left: 133.391px;
+  transform: translateX(0px) translateY(0px) !important; // set 0px for X and Y
+}
+
+.mat-header-cell {
+  color: #8e96a1;
+  font-weight: bold;
+}
+:host ::ng-deep .mat-slide-toggle.mat-checked .mat-slide-toggle-thumb {
+  background-color: white;
+}

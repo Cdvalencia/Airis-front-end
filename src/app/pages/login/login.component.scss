@@ -1,0 +1,162 @@
+@import '../../../styles/util/mixin.scss';
+@import '../../../styles/util/variables.scss';
+
+section.login {
+    width: 100%;
+    min-height: 100vh;
+    // height: 100vh;
+    flex-direction: column;
+    @include flex;
+    background-color: white;
+    .mat-mdc-form-field-error{
+        font-weight: 600;
+    }
+    article {
+        background-color: white;
+        max-width: 380px;
+        padding: 40px 20px;
+        border: 1px solid $c1;
+        border-radius: 8px;  
+        @include flex;
+        flex-wrap: wrap;      
+        header {
+            @include flex;
+            max-width: 340px;
+            figure {
+                img {}
+            }
+        }
+
+        mat-form-field {
+            width: 100%;
+        }
+
+        form {
+            margin-top: 10px;
+            width: 100%;
+            margin-bottom: 20px;
+
+            h3 {
+                text-align: center;
+                font-weight: 700;
+                color: black;
+                font-size: 1.7em;
+                margin-bottom: 10px;
+            }
+            h4 {
+                text-align: center;
+                font-weight: 400;
+                font-size: 1em;
+                color: black;
+                margin-bottom: 15px;
+            }
+
+            &>mat-form-field {
+                position: relative;
+                margin-bottom: 0px;
+
+                .password-field {
+                    position: relative;
+                }
+
+                p {
+                    position: absolute;
+                    top: 1px;
+                    right: 0;
+                    color: black;
+                    font-size: .7em;
+                    cursor: pointer;
+                }
+
+                label {
+                    font-size: 1em;
+                    width: 100%;
+                    text-transform: uppercase;
+                    color: black;
+                    font-weight: 600;
+                }
+
+                input {
+                    width: 100%;
+                    background: #FCFDFE;
+                    height: 42px;
+                    border: 1px solid #F0F1F7;
+                    border-radius: 8px;
+                    padding-left: 15px;
+                    box-sizing: border-box;
+                    margin-top: 2px;                    
+
+                    &:focus {
+                        outline: 0;
+                        border: 1px solid #F0F1F7;
+                    }
+                }
+
+                figure {
+                    position: absolute;
+                    right: 13px;
+                    bottom: 13px;
+                    cursor: pointer;
+                }
+            }
+        }
+
+        footer {
+            padding: 0 8px;
+            margin-top: 15px;
+            div {
+                button {
+                    width: 100%;
+                }
+
+                &:nth-child(1) {
+                    margin-bottom: 30px
+                }
+            }
+
+            div {
+                @include flex;
+
+                h5 {
+                    color: black;
+                    font-weight: 400;
+                    font-size: 1em;
+
+                    span {
+                        color: gray;
+                        font-weight: 600;
+                        cursor: pointer;
+                        margin-left: 5px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width: 1600px) {}
+
+@media screen and (max-width: 1400px) {}
+
+@media screen and (max-width: 1300px) {}
+
+@media screen and (max-width: 1200px) {}
+
+@media screen and (max-width: 1024px) {}
+
+@media screen and (max-width: 900px) {}
+
+@media screen and (max-width: 760px) {}
+
+@media screen and (max-width: 600px) {}
+
+@media screen and (max-width: 550px) {
+    section.login article {
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 400px) {}
+
+@media screen and (max-width: 320px) {}

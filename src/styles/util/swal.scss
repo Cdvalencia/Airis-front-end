@@ -1,0 +1,18 @@
+.swal2-confirm{
+    display: flex;
+    cursor: pointer;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    border: 1px solid $c1;
+    padding: 12px 50px;
+    background-color: $c1 !important;
+    color: white;
+    margin: 0 10px;
+    font-weight: 500;
+}
+
+.swal2-title{
+    font-size: 1.8em;
+}

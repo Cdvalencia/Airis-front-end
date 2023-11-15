@@ -1,0 +1,40 @@
+input:not([type=checkbox]):not([type=button]):not(.sd-dropdown__filter-string-input),
+select {
+    /* Otros estilos que puedas tener aquí */
+
+    /* Si hay otros estilos que deseas mantener, déjalos aquí */
+
+    /* Si no hay otros estilos que deseas mantener, puedes eliminar esta línea */
+    width: 100% !important;
+    background: none !important;
+    height: auto !important;
+    border: none !important;
+    border-radius: 0 !important;    
+    box-sizing: border-box;
+    margin-top: 0 !important;
+    font-size: 1em !important;
+    &:focus{
+        border: none;
+    }
+}
+
+div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 10px;
+    figure{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 40px;
+        height: 40px;
+        span{
+            font-size: 2em;
+        }
+    } 
+    input{
+
+    }
+}

@@ -1,0 +1,57 @@
+<header>
+  <h2>Admin 1</h2>
+  <div>
+    <figure>
+      <span class="icon-[iconamoon--home-thin]"></span>          
+    </figure>
+    <h4>Home</h4>
+  </div>
+</header>
+<section>    
+    <header class="table-header">        
+        <!--Buscador-->
+        <app-search (data)="search($event)"></app-search>        
+        <section>
+          <aside>
+            <mat-form-field appearance="fill">
+              <mat-select              
+                [(ngModel)]="selectType"
+                [compareWith]="compareItems"
+                (selectionChange)="getData()"
+              >
+                <mat-option [value]="-1">Filtro de Tipo</mat-option>
+                <mat-option
+                  *ngFor="let type of types"
+                  [value]="type.id"
+                >
+                  {{ type.name }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </aside>
+          <article>
+              <app-button-filter [columns]="columns" ></app-button-filter>
+              <button
+                class="flex-none ml-4"
+                mat-icon-button
+                matTooltip="Nuevo"
+                type="button"
+                (click)="createItem()"
+                >
+                  <span class="icon-[gala--add]"></span>          
+                
+              </button>
+          </article>   
+        </section>     
+        <!---->
+    </header>
+    <app-table
+        [pgAutomatic]= "true"
+        [columns]="columns"
+        [data]="data"
+        [totalItems]="totalItems"
+        [menuActions]="menuActions"
+        (page)="nextPage($event)"
+        (actions)="opciones($event)"
+      ></app-table>
+</section>

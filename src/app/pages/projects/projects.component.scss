@@ -1,0 +1,70 @@
+header{
+    padding: 30px 4% 18px 4%;
+}
+.projects{
+    margin-top: 0;
+    padding: 0;
+
+    mat-form-field {
+        width: 100%;
+    }
+    h3{
+        margin: 0;
+        margin-top: 20px;
+        font-weight: bold;
+        padding: 0 2%;
+    }
+    form{
+        article{
+            &>div{
+                display: flex;
+            }
+        }
+        footer{
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: flex-end;
+        }
+    }
+    mat-form-field {
+        position: relative;
+        margin-bottom: 0px;
+
+        .password-field {
+            position: relative;
+        }
+
+        p {
+            position: absolute;
+            top: 1px;
+            right: 0;
+            color: black;
+            font-size: .7em;
+            cursor: pointer;
+        }
+
+        label {
+            font-size: 1em;
+            width: 100%;
+            text-transform: uppercase;
+            color: black;
+            font-weight: 600;
+        }
+
+        input {
+            width: 100%;
+            background: #FCFDFE;
+            height: 42px;
+            border: 1px solid #F0F1F7;
+            border-radius: 8px;
+            padding-left: 15px;
+            box-sizing: border-box;
+            margin-top: 2px;                    
+
+            &:focus {
+                outline: 0;
+                border: 1px solid #F0F1F7;
+            }
+        }
+    }
+}

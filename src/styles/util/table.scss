@@ -1,0 +1,77 @@
+.table-header{
+    @include flex;
+    background-color: #EBEBEE;
+    border-radius: 10px 10px 0 0;
+    padding: 0 1%;
+    justify-content: flex-start;
+    width: 100%;
+    h2{
+        margin: 0;
+        margin-right: 5%;
+        font-size: 2.2em;
+        max-width: 30%;
+        font-weight: 600;
+    }
+    app-search{
+        width: 25%;        
+    }
+    &>section{
+        @include flex;   
+        justify-content: space-between;     
+        width: 75%;
+        &>aside{
+            width: calc(100% - 90px);
+        }
+        &>article{
+            justify-self: flex-end;
+            width: 90px;
+            min-width: 90px;
+            @include flex;        
+            span{
+                font-size: 2.5em;
+            }
+            app-button-filter{
+                width: 40px;
+                @include flex;        
+                margin: 0;
+            }
+            button{
+                width: 40px;
+                @include flex;
+                margin: 0;
+            }
+        }
+    }
+    app-button-filter{
+        
+    }
+}
+
+
+@media screen and (max-width: 1600px){}
+@media screen and (max-width: 1400px){}
+@media screen and (max-width: 1300px){}
+@media screen and (max-width: 1200px){}
+@media screen and (max-width: 1024px){}
+@media screen and (max-width: 900px){}
+@media screen and (max-width: 760px){}
+@media screen and (max-width: 600px){
+    main > app-navbar-content, main{
+        height: calc(100vh - 120px);
+    }
+    .table-header{
+        flex-wrap: wrap;
+        flex-direction: column-reverse;
+    }
+    .table-header app-search{
+        width: 100%;
+        margin-bottom: 10px;
+        padding: 0 3%;
+    }
+    .table-header > section{
+        width: 100%;
+    }
+}
+@media screen and (max-width: 400px){}
+@media screen and (max-width: 320px){}
+

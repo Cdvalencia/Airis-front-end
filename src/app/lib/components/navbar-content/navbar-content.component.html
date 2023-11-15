@@ -1,0 +1,28 @@
+<section>    
+    <h3>Dashboards</h3>
+    <nav>
+        <ul>
+            <li *ngFor="let item of menu; index as i" [className]="item.open ? 'open': ''">
+                <a (click)="openMenu(i)">
+                    <figure>
+                        <span [className]="item.ico"></span>
+                    </figure>
+                    <p>{{item.text}}</p>
+                    <figure>
+                        <span class="icon-[iconamoon--arrow-up-2-thin]"></span>
+                    </figure>
+                </a>
+                <ol *ngIf="item.children.length>0">
+                    <li *ngFor="let item2 of item.children; index as j" (click)="openMenu2()">
+                        <a href="" [routerLink]="item2.route">
+                            <figure>
+                                <span [className]="item2.ico"></span>
+                            </figure>
+                            <p>{{item2.text}}</p>                    
+                        </a>
+                    </li>                    
+                </ol>
+            </li>            
+        </ul>
+    </nav>
+</section>

@@ -1,0 +1,46 @@
+<header >
+    <div>
+        <section>
+            <app-logo></app-logo>     
+            <figure class="menu-open" (click)="changeMenuHandler()">
+                <span class="icon-[material-symbols--menu-open]"></span>
+            </figure>               
+            <figure class="menu-open2" (click)="changeMenuHandler()">
+                <span class="icon-[ion--menu-outline]"></span>
+            </figure>               
+        </section>
+        <nav>
+            <article class="nav-profile">                
+                <figure (click)="profileOpen=!profileOpen">
+                    <img src="https://picsum.photos/200/200" alt="">
+                </figure>
+                <section *ngIf="profileOpen">
+                    <ul>
+                        <li>
+                            <h3>Nombre Usuario</h3>
+                            <h4>mail@airis.co</h4>
+                        </li>
+                        <li>
+                            <figure >
+                                <span class="icon-[mdi--account]"></span>
+                            </figure>   
+                            <p>Editar Perfil</p>
+                        </li>
+                        <li (click)="onClickSignOut()">
+                            <figure >
+                                <span class="icon-[ion--log-out-outline]"></span>
+                            </figure>                               
+                            <p>Cerrar Sesión</p>
+                        </li>                        
+                    </ul>
+                </section>
+            </article>
+            <article>
+                <figure>
+                    <span class="icon-[clarity--bell-solid]"></span>  
+                    <p class="nav-ico-bell">10</p>              
+                </figure>
+            </article>
+        </nav>
+    </div>
+</header>
